@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const HeroForm = () => {
   const [pickupPostcode, setPickupPostcode] = useState("");
   const [deliveryPostcode, setDeliveryPostcode] = useState("");
   const [distance, setDistance] = useState(null);
-  const [quote, setQuote] = useState<any>(null);
   const [error, setError] = useState("");
 
   const validatePostcode = (postcode: any) => {
@@ -13,7 +13,7 @@ const HeroForm = () => {
     return londonPostcodeRegex.test(postcode);
   };
 
-  const calculateDistanceAndQuote = async () => {
+  const calculateDistance = async () => {
     if (
       !validatePostcode(pickupPostcode) ||
       !validatePostcode(deliveryPostcode)
@@ -24,54 +24,21 @@ const HeroForm = () => {
 
     setError("");
 
-    const apiKey = "AIzaSyAM5zRtU3cCUF7pP69L8pDzUC8CoaI3acw";
-    const url = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${pickupPostcode}&destinations=${deliveryPostcode}&key=${apiKey}`;
-
     try {
-      const response = await fetch(url);
-      const data = await response.json();
+      const res = await fetch(
+        `/api/distance?pickupPostcode=${pickupPostcode}&deliveryPostcode=${deliveryPostcode}`
+      );
+      const data = await res.json();
 
-      if (response.ok && data.rows[0].elements[0].status === "OK") {
-        const distanceText = data.rows[0].elements[0].distance.text;
-        const distanceValue = parseFloat(distanceText.replace(/[^\d.]/g, ""));
-        setDistance(distanceText);
-
-        // Calculate quote based on distance value
-        const quote = calculateQuote(distanceValue);
-        setQuote(quote);
+      if (res.ok) {
+        setDistance(data.distance);
       } else {
-        setError("Unable to calculate distance.");
+        setError(data.error || "Unable to calculate distance.");
       }
     } catch (error) {
-      setError("Error fetching data from Google Maps API.");
+      setError("Error fetching data from server.");
     }
   };
-
-  const calculateQuote = (distanceInMiles: any) => {
-    const baseCharge = 9.99;
-    const rateUpTo7Miles = 1.99;
-    const rateAfter7Miles = 1.51;
-    let price = baseCharge;
-
-    if (distanceInMiles <= 7) {
-      price += distanceInMiles * rateUpTo7Miles;
-    } else {
-      price += 7 * rateUpTo7Miles;
-      price += (distanceInMiles - 7) * rateAfter7Miles;
-    }
-
-    // Round price to 2 decimal places
-    price = Math.round(price * 100) / 100;
-
-    return price;
-  };
-
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    calculateDistanceAndQuote();
-  };
-
-  console.log(distance, quote);
 
   return (
     <div className="relative z-10 flex mt-10 md:mt-0 items-center justify-center">
@@ -264,7 +231,7 @@ const HeroForm = () => {
         <button
           onClick={(e) => {
             e.preventDefault();
-            calculateDistanceAndQuote();
+            calculateDistance();
           }}
           className="mt-6 w-full bg-blue-900 py-3 text-white font-semibold rounded text-sm md:text-base hover:opacity-80 transition-all"
         >

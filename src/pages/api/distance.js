@@ -9,8 +9,9 @@ export default async function handler(req, res) {
   try {
     const response = await fetch(url);
     const data = await response.json();
+    const distanceText = data.rows[0].elements[0].distance.text;
 
-    console.log(data.rows[0].elements[0].distance.text);
+    console.log(distanceText);
 
     if (response.ok) {
       res

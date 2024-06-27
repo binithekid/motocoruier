@@ -1,7 +1,6 @@
 import Logo from "../../public/images/trustpilotblack.png";
 import Image from "next/image";
 import { FaQuoteLeft } from "react-icons/fa6";
-import { FaStar } from "react-icons/fa";
 import Link from "next/link";
 import { MdStarRate } from "react-icons/md";
 
@@ -16,7 +15,7 @@ const Testimonials = () => {
           <Image
             src={Logo}
             alt="Checkatrade"
-            className="w-[14rem] -ml-1 -mt-1 object-cover hover:opacity-70 transition-all cursor-pointer"
+            className="w-[13rem] -ml-1 -mt-1 object-cover hover:opacity-70 transition-all cursor-pointer"
           />
         </Link>
       </div>
@@ -43,14 +42,12 @@ const Testimonials = () => {
 
           <div className="w-full mt-8 flex items-center justify-between">
             <p className="font-semibold">Robert Maxwell</p>
-            <div className="flex  mt-2 flex-row gap-1">
-              <div className="flex mt-2 flex-row">
-                <MdStarRate className="text-green-400" />{" "}
-                <MdStarRate className="text-green-400" />{" "}
-                <MdStarRate className="text-green-400" />{" "}
-                <MdStarRate className="text-green-400" />{" "}
-                <MdStarRate className="text-green-400" />{" "}
-              </div>
+            <div className="flex mt-2 flex-row">
+              <MdStarRate className="text-green-400" />{" "}
+              <MdStarRate className="text-green-400" />{" "}
+              <MdStarRate className="text-green-400" />{" "}
+              <MdStarRate className="text-green-400" />{" "}
+              <MdStarRate className="text-green-400" />{" "}
             </div>
           </div>
         </div>
@@ -60,13 +57,13 @@ const Testimonials = () => {
             <p className="text-sm text-gray-600">
               Excellent customer support and prompt delivery. The staff was
               friendly and answered all my questions. The entire process was
-              smooth and hassle-free. Best courier service I've ever used!
+              smooth and hassle-free. Best courier service I&apos;ve ever used!
             </p>
           </div>
 
           <div className="w-full mt-8 flex items-center justify-between">
             <p className="font-semibold">Maria Robinson</p>
-            <div className="flex mt-2 flex-row">
+            <div className="flex -mt-1 flex-row">
               <MdStarRate className="text-green-400" />{" "}
               <MdStarRate className="text-green-400" />{" "}
               <MdStarRate className="text-green-400" />{" "}
@@ -87,7 +84,7 @@ const Testimonials = () => {
 
           <div className="w-full mt-4 flex items-center justify-between">
             <p className="font-semibold">Kristina Bellis</p>
-            <div className="flex flex-row">
+            <div className="flex -mt-1 flex-row">
               <MdStarRate className="text-green-400" />{" "}
               <MdStarRate className="text-green-400" />{" "}
               <MdStarRate className="text-green-400" />{" "}

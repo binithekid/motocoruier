@@ -12,7 +12,7 @@ const Footer = () => {
           <Image
             src={logo}
             alt="Retail Jobs London"
-            className="w-auto cursor-pointer h-20 md:h-24 hover:opacity-80 transition-all"
+            className="w-auto cursor-pointer object-cover h-[4rem] md:h-[5rem] hover:opacity-80 transition-all"
           />
         </Link>
         <div className="md:flex hidden items-center mt-8 flex-row gap-6">

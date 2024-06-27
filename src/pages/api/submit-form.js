@@ -13,7 +13,6 @@ export default async function handler(req, res) {
       deliveryNumber,
       bookingDate,
       bookingTime,
-      distance,
       contactEmail,
       quote,
       message,

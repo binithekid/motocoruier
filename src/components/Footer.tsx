@@ -3,20 +3,19 @@ import logo from "../../public/images/logo.png";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import Link from "next/link";
-import { FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <div className="w-full flex flex-col">
-      <div className="w-full px-20 py-4 items-center justify-between hidden md:flex flex-row gap-4">
+      <div className="w-full px-20 py-4 items-center justify-center md:justify-between flex flex-row gap-4">
         <Link href="/">
           <Image
             src={logo}
             alt="Retail Jobs London"
-            className="w-auto cursor-pointer h-24 hover:opacity-80 transition-all"
+            className="w-auto cursor-pointer h-20 md:h-24 hover:opacity-80 transition-all"
           />
         </Link>
-        <div className="flex items-center mt-8 flex-row gap-6">
+        <div className="md:flex hidden items-center mt-8 flex-row gap-6">
           <div className="flex gap-1 flex-row">
             <FaStar className="text-yellow-300 text-2xl" />{" "}
             <FaStar className="text-yellow-300 text-2xl" />{" "}
@@ -29,7 +28,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col ">
+        <div className="md:flex hidden flex-col ">
           <h1 className="text-blue-900 font-semibold text-3xl text-right">
             07301 611 578
           </h1>

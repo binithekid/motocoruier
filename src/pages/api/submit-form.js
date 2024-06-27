@@ -30,7 +30,6 @@ export default async function handler(req, res) {
     // Email options
     const mailOptions = {
       from: "onecloudmediauk1@gmail.com",
-      to: "bini.tek1@gmail.com",
       to: "Motorcyclecourierlondon@outlook.com",
       subject: "MOTOR CYCLE FORM SUBMISSION",
       text: `Collection Details:\nName: ${collectiontName}\nNumber: ${collectionNumber}\nAddress: ${collectionAddress}\nPostcode: ${collectionPostCode}\nDelivery Details:\nName: ${deliveryName}\nNumber: ${deliveryNumber}\nAddress: ${deliveryAddress}\nPostcode: ${deliveryPostcode}\nBooking Details:\nBooking Date: ${bookingDate}\nBooking Time: ${bookingTime}\nContact Email: ${contactEmail}\nQuote: ${quote}\nMessage: ${message}

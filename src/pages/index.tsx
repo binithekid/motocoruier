@@ -25,10 +25,10 @@ export default function Home({ posts }: any) {
   return (
     <>
       <Head>
-        <title>Motorcycle Courier London | 24/7 Fast Response</title>
+        <title>Motorcycle Couriers London</title>
         <meta
           name="description"
-          content="Discover swift and reliable emergency plumbing and heating services in London. Our experienced team is ready to tackle urgent issues with efficiency, ensuring your home stays warm and your plumbing works seamlessly. Trust us for prompt and professional solutions to your emergency heating and plumbing needs in the heart of London"
+          content="Reliable and fast motorcycle courier service in London. We ensure quick, secure deliveries for businesses and individuals. Get your package on time, every time!"
         />
       </Head>
       <main>

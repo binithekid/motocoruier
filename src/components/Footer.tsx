@@ -26,7 +26,6 @@ const Footer = () => {
           </div>
           <div className="flex flex-row gap-4 mt-1">
             <p className="font-light">5.0 star rating</p>
-            <p className="font-light italic">351 reviews</p>
           </div>
         </div>
 
@@ -38,10 +37,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="w-full flex flex-row gap-3 justify-center items-center py-3 text-center bg-gray-200">
-        <p className="text-sm text-gray-500">2024 Ⓒ Plumbers Local to You</p>
-        <Link href="https://www.instagram.com/plumberslocaltoyou/">
-          <FaInstagram />
-        </Link>
+        <p className="text-sm text-gray-500">
+          2024 Ⓒ Motorcycle Couriers London
+        </p>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@
 export default async function handler(req, res) {
   const { pickupPostcode, deliveryPostcode } = req.query;
 
-  const apiKey = "AIzaSyC7tH-vP_tDyPi42ZKivORunFrQ_WRa2v0";
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_TOKEN;
   const url = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${pickupPostcode}&destinations=${deliveryPostcode}&key=${apiKey}`;
 
   try {

@@ -28,6 +28,9 @@ const calculateQuote = (distanceInMiles) => {
   // Round price to 2 decimal places
   price = Math.round(price * 100) / 100;
 
+  // Convert price to string with fixed 2 decimal places
+  price = price.toFixed(2);
+
   return price;
 };
 
